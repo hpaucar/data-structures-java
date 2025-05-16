@@ -1,0 +1,22 @@
+# Ignorar archivos de clase compilados
+*.class
+
+# Ignorar directorios de compilación comunes
+/bin/
+/build/
+/out/
+
+# Ignorar archivos temporales del IDE
+*.log
+*.tmp
+*.swp
+
+# IntelliJ IDEA
+.idea/
+*.iml
+out/
+
+# Eclipse
+.project
+.classpath
+.settings/
