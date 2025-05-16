@@ -1,79 +1,53 @@
-import java.util.Scanner;
-
 public class Principal {
     public static void main(String[] args) {
-        Scanner entrada = new Scanner(System.in);
         ListaEnlazada lista = new ListaEnlazada();
-        boolean continuar = true;
-        int valor, posicion;
 
-        while (continuar) {
-            System.out.println("\nMENU DE OPCIONES:");
-            System.out.println("1. Agregar al inicio");
-            System.out.println("2. Agregar al final");
-            System.out.println("3. Agregar en posicion");
-            System.out.println("4. Eliminar primero");
-            System.out.println("5. Eliminar ultimo");
-            System.out.println("6. Eliminar en posicion");
-            System.out.println("7. Actualizar valor en posicion");
-            System.out.println("8. Revertir lista");
-            System.out.println("9. Ver lista");
-            System.out.println("10. Obtener tamaño");
-            System.out.println("11. Salir");
-            System.out.print("\nSeleccione una opción: ");
+        // 1. Crear lista con elementos iniciales uno por uno
+        lista.insertarFinal(2);
+        lista.insertarFinal(9);
+        lista.insertarFinal(8);
+        lista.insertarFinal(7);
+        lista.insertarFinal(9);
+        lista.insertarFinal(6);
+        lista.insertarFinal(0);
+        lista.insertarFinal(6);
 
-            int opcion = entrada.nextInt();
-            switch (opcion) {
-                case 1:
-                    System.out.print("Ingrese el valor: ");
-                    valor = entrada.nextInt();
-                    lista.insertarInicio(valor);
-                    break;
-                case 2:
-                    System.out.print("Ingrese el valor: ");
-                    valor = entrada.nextInt();
-                    lista.insertarFinal(valor);
-                    break;
-                case 3:
-                    System.out.print("Ingrese el valor: ");
-                    valor = entrada.nextInt();
-                    System.out.print("Ingrese la posición: ");
-                    posicion = entrada.nextInt();
-                    lista.insertarEnPosicion(valor, posicion);
-                    break;
-                case 4:
-                    lista.eliminarInicio();
-                    break;
-                case 5:
-                    lista.eliminarFinal();
-                    break;
-                case 6:
-                    System.out.print("Ingrese la posición: ");
-                    posicion = entrada.nextInt();
-                    lista.eliminarEnPosicion(posicion);
-                    break;
-                case 7:
-                    System.out.print("Ingrese el nuevo valor: ");
-                    valor = entrada.nextInt();
-                    System.out.print("Ingrese la posición: ");
-                    posicion = entrada.nextInt();
-                    lista.actualizarValor(valor, posicion);
-                    break;
-                case 8:
-                    lista.revertir();
-                    break;
-                case 9:
-                    lista.mostrar();
-                    break;
-                case 10:
-                    System.out.println("Tamaño de la lista: " + lista.obtenerTamanio());
-                    break;
-                case 11:
-                    continuar = false;
-                    break;
-                default:
-                    System.out.println("Opción inválida");
-            }
-        }
+        System.out.println("Lista original:");
+        lista.mostrar();
+
+        // Otras operaciones (agregar, eliminar, actualizar...)
+        lista.insertarInicio(5);
+        System.out.println("Después de agregar 5 al inicio:");
+        lista.mostrar();
+
+        lista.insertarFinal(11);
+        System.out.println("Después de agregar 11 al final:");
+        lista.mostrar();
+
+        lista.insertarEnPosicion(100, 3);
+        System.out.println("Después de insertar 100 en posición 3:");
+        lista.mostrar();
+
+        lista.eliminarInicio();
+        System.out.println("Después de eliminar el primer elemento:");
+        lista.mostrar();
+
+        lista.eliminarFinal();
+        System.out.println("Después de eliminar el último elemento:");
+        lista.mostrar();
+
+        lista.eliminarEnPosicion(4);
+        System.out.println("Después de eliminar en posición 4:");
+        lista.mostrar();
+
+        lista.actualizarValor(42, 2);
+        System.out.println("Después de actualizar posición 2 a 42:");
+        lista.mostrar();
+
+        lista.revertir();
+        System.out.println("Después de invertir la lista:");
+        lista.mostrar();
+
+        System.out.println("Tamaño final de la lista: " + lista.obtenerTamanio());
     }
 }
