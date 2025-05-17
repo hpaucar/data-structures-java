@@ -1,9 +1,0 @@
-package argumentos;
-
-public class Punto {
-	
-	float x, y;
-	
-	
-
-}
